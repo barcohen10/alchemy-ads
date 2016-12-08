@@ -1,0 +1,116 @@
+.landing {
+
+  .loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #797575;
+  display: inline-block;
+  margin-left: 8px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}  
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+header.row {
+  height: 40%;
+  margin-bottom: 2%;
+}
+main.row {
+  height: 30%;
+  margin-bottom: 5%;
+}
+footer.row{
+  height: 23%;
+}
+  .row {
+
+    .url-box {
+      position: absolute;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      transition-duration: 1.5s;
+      font-family: 'Montserrat', sans-serif;
+      padding:0;
+
+      &.top {
+        transform: translate(-50%, 10%);  
+         top: 5%;
+         height:40%;
+      }
+
+      .welcome {
+          p:first-child { 
+          font-style: italic;
+          font-size: 2.5rem;
+          line-height: 40px;
+          margin-bottom: 25px;
+          color: white;
+        }
+        p:nth-child(2) {
+          text-transform: uppercase;
+          color: white;
+          font-weight: 700;
+          font-size: 3rem;
+          line-height: 75px;
+          margin-bottom: 50px;
+        }
+      }
+
+      button {
+        margin-top: 1rem;
+        border: 1px solid #f13009;
+        background: #f74a27;
+        color: #fff;
+        -webkit-box-shadow: 0 1px 0 #b14700;
+        -moz-box-shadow: 0 1px 0 #b14700;
+        box-shadow: 0 1px 0 #b14700;
+        width:100%;
+        font-size: 18px;
+        padding: 5% 10%;
+        border-radius:4px;
+      }
+    }
+
+    .ad {
+      background: white;
+      height: 100%;
+      margin: 0 4% 0 4%;
+      padding: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 2em;
+      color:rgb(31, 55, 79);
+
+      .title {
+        width: 96%;
+        font-weight: bold;
+        margin: 1% 2% 0 2%; 
+        border-bottom: 1px solid rgb(31, 55, 79);
+      }
+      .message {
+        padding: 0 2% 0 2%;  
+
+        &.bigMessage {
+          font-size: 2.5rem;
+          font-weight: bold;
+          position: absolute;  
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    } 
+  }
+}
+ 

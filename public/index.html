@@ -1,0 +1,60 @@
+<html ng-app="adsApp">
+<head>
+	<title></title>
+	<base href="/">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript" src="/js/app.controller.js"></script>
+	<script type="text/javascript" src="/js/app.service.js"></script>
+</head>
+
+<body class="container" ng-controller="MainCtrl">
+
+	<div class="landing">
+	  <header class="row text-center">
+
+	    <div class="url-box col-xs-11" ng-class="{'top' : adVisible}">
+	    	<div class="welcome" ng-hide="firstAdShown">
+	      		<p>Welcome</p>
+	      		<p>It's nice to meet you</p>
+	    	</div>
+	      <div class="form-group">
+	      	<form ng-submit="submitUrl()">
+	      		<input class="form-control input-lg" type="text" ng-model="inputUrl" placeholder="Enter url">
+	      		<button type="submit" class="btn btn-default btn-lg">
+	      			Show Ads <span class="loader" ng-if="showSpinner"></span>
+	      		</button>
+	      	</form>
+	      </div> 	
+	      <div ng-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>	
+	    </div>
+	  </header>
+		
+		<section class="advertising" ng-if="adVisible">
+				<main class="row"> 
+    <div class="ad col-xs-11">    
+			<div class="title"><span>Advertisement about {{selectedAd.adName}}</span></div>
+			<p class="message bigMessage">{{selectedAd.ad.text}}</p>
+		</div>
+		</main>
+		<footer class="row"> 
+    <div class="ad col-xs-11">
+			<div class="title">Reason</div>
+			<p class="message">
+				<span>This advertisement selected because of <span>
+				<span>The matual {{selectedAd.reason.type}} found in the url content: {{selectedAd.reason.value}}</span>
+				</br>
+				<span>The relevance of this {{selectedAd.reason.type}} is {{selectedAd.reason.relevance}}/1!!!</span>
+			</p>
+		</div>
+		</footer>
+		</section>
+	</div>
+</body>
+
+</html>
