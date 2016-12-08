@@ -16,8 +16,8 @@ app.controller('MainCtrl', ['$scope', 'adsService',
 			$scope.adVisible = false;
 
 			adsService.analyzeUrl(url, function(result) {
-				var status =  result.statusText;
-				if(!!result.data.status) {
+				var status =  'error';
+				if(!!result.data) {
 					status =  result.data.status;
 				}
 
